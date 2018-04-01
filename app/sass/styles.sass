@@ -1,0 +1,390 @@
+@import "__smartgrid.sass"
+@import "__animations.sass"
+@import url('https://fonts.googleapis.com/css?family=Open+Sans')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans')
+
++reset
+html, body
+  height: 100%
+body
+  font-family: 'Open Sans', sans-serif
+.wrapper
+  +wrapper
+.row
+  +row-flex
+  &-nm
+    +row-flex-nm
+  &_justify-sb
+    +justify-content(space-between)
+.section-header
+  color: #4d505e
+  font-size: 37px
+  line-height: 45px
+  text-align: center
+  font-weight: 600
+.button
+  display: block
+  transition: all 1s ease
+  color: #ffffff
+  text-align: center
+  font-size: 13px
+  line-height: 59px
+  text-decoration: none
+  background: linear-gradient(270deg, #3afffd,#2079f2)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3afffd', endColorstr='#2079f2',GradientType=1 )
+  background-size: 200% 100%
+  background-position: 100% 0%
+  &:hover
+    background-position: 0% 0%
+.topcontainer
+  position: relative
+  padding-bottom: 234px
+  background: #2d3680
+  background: linear-gradient(149deg , #2d3680 0%,#1b2069 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d3680', endColorstr='#1b2069',GradientType=0 )
+  &__header
+    padding-top: 40px
+  &__section
+    padding-top: 150px
+  &__bg
+    position: absolute
+    background: url("../images/topcontainer_bg.png") left bottom no-repeat
+    background-size: contain
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 234px
+.header
+  &__logo
+    font-family: 'Open Sans', sans-serif
+    font-size: 18px
+    color: #ffffff
+    &_strong
+      font-weight: bold
+  &__nav
+    align-self: flex-end
+  &__phone
+    color: #ffffff
+    font-size: 18px
+    text-decoration: none
+    align-self: flex-end
+    &:before
+      content: ''
+      display: inline-block
+      height: 18px
+      width: 18px
+      background: url("../images/top_phone_ico.png") no-repeat
+      margin-bottom: -3px
+      margin-right: 5px
+.topnavi
+  font-size: 13px
+  &__item:hover &__link
+    color: #34defa
+  &__item
+    display: inline-block
+    color: #939ad5
+    margin-right: 36px
+    &:last-of-type
+      margin-right: 0
+    &_active
+      color: #34defa
+      &:before
+        content: ''
+        display: inline-block
+        width: 5px
+        height: 16px
+        background: url("../images/topnav_active.png") no-repeat
+        margin-bottom: -3px
+        margin-right: 7px
+  &__link
+    text-decoration: none
+    color: inherit
+.topsection
+  &__leftside
+    +col()
+    +size(6)
+  &__rightside
+    +col()
+    +size(6)
+.header-textside
+  &__title
+    font-size: 40px
+    color: #ffffff
+    &_colored
+      display: block
+      color: #3afefd
+  &__line
+    margin-top: 46px
+    height: 4px
+    width: 65px
+    background-color: #4b54a8
+  &__textblock
+    color: #646ba9
+    width: 83%
+    font-size: 15px
+    margin-top: 34px
+  &__button
+    margin-top: 41px
+    height: 59px
+    width: 275px
+    border-radius: 30px
+  &__logo
+    margin-top: 75px
+    width: 66%
+.bank-logo
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  justify-content: space-between
+  height: 67px
+  &__img
+    height: 67px
+    width: 77px
+    background: url("../images/bank-logo-img.png") no-repeat center
+  &__text
+    color: #bfc3ef
+    font-size: 15px
+    line-height: 29px
+  &__title
+    height: 29px
+    width: 197px
+    background: url("../images/bank-logo-logo.png") no-repeat center
+.header-imgside
+  background: url("../images/header_bg.png") center center no-repeat
+  background-size: contain
+
+.about-section
+  padding-top: 110px
+  background-color: #f6f6fe
+  padding-bottom: 90px
+  &__row
+    margin-bottom: 30px
+    &:last-of-type
+      margin-bottom: 0
+.about-card
+  +col
+  +size(4)
+  background: #ffffff
+  padding: 37px 44px 30px 37px
+  &_no-text
+    background: transparent
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: flex-end
+  &__icon
+    display: block
+    margin-bottom: 20px
+  &__title
+    color: #282a39
+    font-size: 18px
+    font-weight: bold
+    margin-bottom: 30px
+  &__grand-title
+    font-size: 37px
+    color: #30333f
+    text-align: right
+    margin-bottom: 65px
+  &__button
+    width: 275px
+    height: 59px
+    border-radius: 30px
+
+  &__caption
+    font-size: 14px
+    color: #797979
+    line-height: 25px
+  &__link
+    font-size: 14px
+    color: #297fff
+    text-decoration: none
+    line-height: 25px
+    &:after
+      content: ''
+      display: inline-block
+      margin-left: 10px
+      width: 6px
+      height: 9px
+      background: url("../images/about-link.png")
+.tariffs
+  background-color: #ffffff
+  padding: 90px 0
+  &__header
+    margin-bottom: 100px
+.tariff-card
+  +col
+  +size(3)
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  background: linear-gradient(35deg, #ffffff 0%,#f3f4f9 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f4f9',GradientType=0 )
+  padding: 52px 22px 43px 23px
+  text-align: center
+  transition: all .25s linear
+  &:hover
+    margin-top: -20px
+    padding-top: 72px
+    margin-bottom: -20px
+    padding-bottom: 63px
+    background: linear-gradient(to bottom, #65d0cf 0%,#3d4587 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#65d0cf', endColorstr='#3d4587',GradientType=0 )
+  &:hover &__title
+    color: #ffffff
+  &:hover &__caption
+    color: #ffffff
+  &:hover &__price
+    color: #ffffff
+  &:hover &__price-caption
+    color: #ffffff
+
+  &__title
+    color: #30333f
+    font-size: 25px
+    line-height: 45px
+    margin-bottom: 28px
+  &__caption
+    color: #797979
+    font-size: 13px
+    line-height: 25px
+    margin-bottom: 27px
+    flex-grow: 1
+  &__price
+    margin: 0 auto
+    @at-root
+      .tariff-price
+        color: #454650
+        display: flex
+        flex-direction: row
+        &__num
+          font-size: 35px
+        &__dimension
+          align-self: flex-end
+          font-size: 22px
+          margin-left: 12px
+  &__price-caption
+    color: #aeaeae
+    font-size: 13px
+  &__button
+    transition: none
+    display: flex
+    justify-content: space-around
+    height: 50px
+    line-height: 50px
+    border-radius: 25px
+    margin-top: 30px
+    &:hover
+      background: transparent
+      box-shadow: 0 0 0 2px #4eb2ff
+    &:after
+      content: ''
+      display: block
+      height: 11px
+      width: 11px
+      align-self: center
+      background: url("../images/tariff-card-button-arrow.png")
+.boost
+  background: linear-gradient(-129deg, #2d3680 0%,#1b2069 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d3680', endColorstr='#1b2069',GradientType=0 )
+.boost-text
+  +col
+  +size(6)
+  display: flex
+  flex-direction: row
+  justify-content: center
+  flex-wrap: wrap
+  align-items: flex-start
+  padding-bottom: 90px
+  padding-top: 72px
+  &__header
+    color: #f1f1f1
+    font-size: 40px
+    line-height: 59px
+    font-weight: 600
+    margin-bottom: 45px
+  &__line
+    margin-top: 10px
+    background-color: #4b54a8
+    width: 65px
+    height: 4px
+    //flex-basis: 17%
+  &__text
+    color: #bfc3ef
+    font-size: 18px
+    line-height: 33px
+    margin-left: 20px
+    flex:  0 0 83%
+    &_bold
+      font-weight: 600
+      color: #ffffff
+  &__button
+    margin-top: 42px
+    height: 59px
+    width: 275px
+    border-radius: 30px
+.boost-img
+  +col
+  +size(4)
+  +offset-left(2)
+  background: url("../images/boost-img.png") center center no-repeat
+  background-size: 77%
+.farms
+  padding: 170px 0 120px
+  background-color: #f6f6fe
+  &__title
+    margin-bottom: 30px
+  &__text-block
+    +col
+    +size(10)
+    margin: 0 auto 60px auto
+    font-size: 14px
+    color: #9296ad
+    text-align: center
+    &_blue
+      color: #1583ff
+    &_bottom
+      margin: 90px auto 0 auto
+      text-align: center
+.farm-block
+  +col
+  +size(4)
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  background-color: #ffffff
+  padding: 40px 47px 33px 33px
+  justify-content: space-between
+  margin-top: 30px
+  &_remark
+    padding: 16px 65px 20px 0
+    font-size: 16px
+    line-height: 29px
+    background-color: transparent
+  &_with-button
+    outline: 2px #ebebf7 solid
+    background: transparent
+    flex-direction: column
+    align-items: center
+  &__img
+    display: inline-block
+    img
+      display: block
+  &__caption
+    color: #a0a0a0
+    font-size: 14px
+    line-height: 14px
+  &__button
+    width: 196px
+    height: 50px
+    line-height: 50px
+    border-radius: 25px
+    margin-top: 10px
+  &__price
+    color: #454650
+    font-size: 30px
+    line-height: 25px
+    margin-top: 9px
+    font-weight: 600
+  &_price-curr
+    font-size: 20px
+
