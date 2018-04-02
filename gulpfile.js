@@ -80,7 +80,7 @@ gulp.task('build', ['sass', 'scripts'], function() {
 
     var buildFiles = gulp.src([
         './app/*.html',
-        '/app/.htaccess',
+        './app/.htaccess',
     ]).pipe(gulp.dest('dist'));
 
     var buildCss = gulp.src([
