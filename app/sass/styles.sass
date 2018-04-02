@@ -476,9 +476,9 @@ body
     +size(6)
   &__rightside
     display: flex
-    flex-direction: row
+    flex-direction: column
     flex-wrap: wrap
-    align-items: stretch
+    justify-content: space-between
   &__leftside
     display: flex
     flex-direction: row
@@ -523,6 +523,8 @@ body
   display: flex
   flex-direction: column
   justify-content: center
+  padding: 0 8px
+  flex: 0 0 47%
   &_top
     //padding: 90px 0
     border-left: 4px solid #3d4587
@@ -531,13 +533,25 @@ body
     background-size: 100% 4px, 100% 4px
     background-position: 0 0, 0 100%
     background-repeat: no-repeat
-    margin-bottom: 40px
+    //margin-bottom: 40px
   &_bottom
     background: linear-gradient(to bottom, #65d0cf 0%, #3d4587 100%)
   &__caption
     display: block
     font-size: 14px
     color: #bfc3ef
+    text-align: center
+  &__text
+    font-size: 14px
+    color: #ffffff
+    text-align: center
+  &__hr
+    width: 80%
+    margin: 20px auto
+    height: 2px
+    background: #59a6b9
+  &__img
+    margin-top: 30px
     text-align: center
   &__price
     padding-top: 20px
@@ -546,11 +560,16 @@ body
     font-weight: bold
     text-align: center
     color: #2cb8f7
+    &_bottom
+      color: #ffffff
+      padding-top: 10px
     &_through
       font-size: 25px
       line-height: 20px
       display: inline-block
       text-decoration: line-through
+    &_small
+      font-size: 25px
     &_small
       font-size: 20px
 
