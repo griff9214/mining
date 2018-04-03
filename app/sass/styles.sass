@@ -26,6 +26,9 @@ body
   line-height: 45px
   text-align: center
   font-weight: 600
+  +xxs-block
+    font-size: 30px
+    line-height: 35px
 
 .section-text-block
   +col
@@ -49,6 +52,10 @@ body
   background-position: 69% 0%
   &:hover
     background-position: 0% 0%
+  &:active
+    outline: none
+    border: none
+
 
 .topcontainer
   position: relative
@@ -178,6 +185,8 @@ body
 .header-imgside
   background: url("../images/header_bg.png") center center no-repeat
   background-size: contain
+  background-position: center top
+  margin-top: -40px
 
 .about-section
   padding-top: 110px
@@ -386,8 +395,8 @@ body
   flex-direction: row
   flex-wrap: wrap
   background-color: #ffffff
-  padding: 40px 47px 33px 33px
-  justify-content: space-between
+  padding: 40px 0 33px 33px
+  justify-content: flex-start
   margin-top: 30px
   &_remark
     padding: 16px 65px 20px 0
@@ -401,6 +410,7 @@ body
     align-items: center
   &__img
     display: inline-block
+    margin-right: 20px
     img
       display: block
   &__caption
@@ -474,11 +484,14 @@ body
   &__leftside, &__rightside
     +col
     +size(6)
+    +size-xxs(12)
   &__rightside
     display: flex
     flex-direction: column
     flex-wrap: wrap
     justify-content: space-between
+    +xxs-block
+      flex-wrap: nowrap
   &__leftside
     display: flex
     flex-direction: row
@@ -491,6 +504,8 @@ body
   &__logo2
     flex: 0 0 100%
     margin-bottom: 64px
+    +xxs-block
+      margin-bottom: 20px
   &__line
     height: 4px
     width: 65px
@@ -501,6 +516,9 @@ body
     line-height: 25px
     flex: 0 0 76%
     margin-top: -10px
+    +xxs-block
+      margin-top: 0
+      flex: 0 0 100%
   &__button
     height: 59px
     width: 275px
@@ -520,6 +538,7 @@ body
 .masscryp-card
   +col
   +size(6)
+  +size-xxs(12)
   display: flex
   flex-direction: column
   justify-content: center
@@ -576,11 +595,16 @@ body
 .order-section
   background-color: #f8f9fa
   padding: 191px 0 159px
+  +xxs-block
+    padding: 75px 0 90px
   &__items
     position: relative
     display: flex
     flex-grow: 1
     flex-direction: row
+    +xxs-block
+      +col
+      flex-direction: column
   &__progress-bar
     position: absolute
     width: calc(100% - 22px)
@@ -589,6 +613,11 @@ body
     height: 2px
     background-color: #eeeeee
     z-index: 0
+    +xxs-block
+      height: 100%
+      top: 33px
+      left: 0
+      width: 2px
   &__progress-done
     position: absolute
     width: calc(37% - 22px)
@@ -599,6 +628,14 @@ body
     background: linear-gradient(to left, #eeeeee 0%,#3e94f5 25%,#3e94f5 100%)
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#3e94f5',GradientType=0 )
     z-index: 1
+    +xxs-block
+      height: 50%
+      top: 33px
+      left: 0
+      width: 2px
+      background: linear-gradient(to top, #eeeeee 0%,#3e94f5 25%,#3e94f5 100%)
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#3e94f5',GradientType=0 )
+
 
 
 .order-item
@@ -607,6 +644,9 @@ body
   display: flex
   flex-direction: row
   align-items: center
+  +xxs-block
+    margin-bottom: 20px
+    margin-left: 20px
   &__ico
     height: 60px
     width: 60px
@@ -629,18 +669,26 @@ body
     background: url("../images/order-item-mark.png") no-repeat center
     left: 24px
     bottom: -58px
+    +xxs-block
+      left: -25px
+      top: 41%
     &_completed
       height: 16px
       width: 16px
       background: url("../images/order-item-mark-completed.png") no-repeat center
       left: 22px
       bottom: -60px
+      +xxs-block
+        left: -27px
 
 .footer
   padding: 111px 0px 39px
   background: #2d3680
-  background: linear-gradient(149deg, #2d3680 0%,#1b2069 100%);
+  background: linear-gradient(149deg, #2d3680 0%,#1b2069 100%)
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d3680', endColorstr='#1b2069',GradientType=0 )
+  +xxs-block
+    padding-top: 70px
+
   &__line
     width: 100%
     height: 1px
@@ -657,11 +705,20 @@ body
     font-size: 16px
     line-height: 45px
     color: #ffffff
+    text-transform: uppercase
+    +xxs-block
+      line-height: 25px
   &__contacts
     margin-top: 87px
+    +xxs-block
+      flex-direction: column
+      align-items: flex-start
+      margin-top: 55px
   &__bottom
     justify-content: space-between
     align-items: center
+    +xxs-block
+      justify-content: center
   &__copyright
     font-size: 13px
     color: #505599
@@ -671,6 +728,9 @@ body
   flex-direction: column
   justify-content: flex-start
   align-items: center
+  +xxs-block
+    flex-direction: row
+    margin-bottom: 24px
   &__icon
     width: 49px
     height: 49px
@@ -692,6 +752,13 @@ body
     &_nb
       color: #777dbc
       font-weight: normal
+    +xxs-block
+      margin-top: 0
+      margin-left: 30px
+.social-icons
+  +xxs-block
+    text-align: center
+    flex: 0 0 100%
 .social-icons__icon
   display: inline-block
   margin-right: 16px
@@ -703,3 +770,44 @@ body
     background: url("../images/social-ico-im.png")
   &_tm
     background: url("../images/social-ico-tm.png")
+
+.modal-content
+  padding: 65px
+  position: relative
+.modal-title
+  font-family: "Open Sans"
+  font-size: 28px
+  font-weight: bold
+  text-align: center
+  margin-bottom: 20px
+.modal-close
+  position: absolute
+  right: -34px
+  top: -34px
+  height: 25px
+  width: 25px
+  background: url("../images/modal-close.png")
+.modal-input
+  display: block
+  width: 100%
+  font-family: "Open Sans"
+  font-size: 14px
+  color: #30333f
+  font-weight: bold
+  line-height: 45px
+  padding-left: 25px
+  margin-bottom: 20px
+  border: 2px solid #e5e5e5
+.modal-button
+  width: 275px
+  height: 59px
+  border-radius: 30px
+  border: none
+  outline: none
+  cursor: pointer
+  margin: 0 auto
+.modal input:active, textarea:active
+  border: 2px solid #4eb2ff
+
+.modal input:focus, textarea:focus
+  border: 2px solid #4eb2ff
