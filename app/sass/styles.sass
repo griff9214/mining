@@ -1,5 +1,6 @@
 @import "__smartgrid.sass"
 @import "__animations.sass"
+@import "../addons/hamburgers/hamburgers"
 @import url('https://fonts.googleapis.com/css?family=Open+Sans')
 @import url('https://fonts.googleapis.com/css?family=Open+Sans')
 
@@ -26,7 +27,7 @@ body
   line-height: 45px
   text-align: center
   font-weight: 600
-  +xxs-block
+  +sm-block
     font-size: 30px
     line-height: 35px
 
@@ -63,10 +64,14 @@ body
   background: #2d3680
   background: linear-gradient(149deg, #2d3680 0%, #1b2069 100%)
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2d3680', endColorstr='#1b2069', GradientType=0)
+  +sm-block
+    padding-bottom: 160px
   &__header
     padding-top: 34px
   &__section
     padding-top: 177px
+    +sm-block
+      padding-top: 64px
   &__bg
     position: absolute
     background: url("../images/topcontainer_bg.png") left bottom no-repeat
@@ -75,6 +80,9 @@ body
     left: 0
     width: 100%
     height: 234px
+    +sm-block
+      background-size: auto
+      background-position-x: -340px
 
 .header
   &__logo
@@ -85,8 +93,16 @@ body
     letter-spacing: 1.1px
     &_strong
       font-weight: bold
+    +md-block
+      font-size: 16px
+    +sm-block
+      margin-left: 10px
   &__nav
     align-self: flex-end
+    +md-block
+      flex-grow: 1
+    +sm-block
+      display: none
   &__phone
     color: #ffffff
     font-size: 18px
@@ -94,6 +110,11 @@ body
     align-self: flex-end
     margin-right: 39px
     letter-spacing: 0.5px
+    +md-block
+      font-size: 16px
+      margin-right: 0
+    +sm-block
+      display: none
     &:before
       content: ''
       display: inline-block
@@ -102,17 +123,31 @@ body
       background: url("../images/top_phone_ico.png") no-repeat
       margin-bottom: -3px
       margin-right: 14px
+  &__hamburger
+    align-self: center
+    display: none
+    +sm-block
+      display: block
 
 .topnavi
   font-size: 13px
   &__item:hover &__link
     color: #34defa
+  +md-block
+    display: flex
+    justify-content: space-around
+  +sm-block
+    display: block
   &__item
     display: inline-block
     color: #939ad5
     margin-right: 36px
     &:last-of-type
       margin-right: 0
+    +md-block
+      margin-right: 0
+    +sm-block
+      display: block
     &_active
       color: #34defa
       &:before
@@ -131,9 +166,15 @@ body
   &__leftside
     +col()
     +size(6)
+    +size-sm(12)
   &__rightside
     +col()
     +size(6)
+    +size-sm(12)
+    +sm-block
+      order: -1
+      min-height: 325px
+      margin-bottom: 24px
 
 .header-textside
   &__title
@@ -141,9 +182,14 @@ body
     line-height: 58px
     color: #ffffff
     text-transform: uppercase
+    +sm-block
+      font-size: 28px
+      line-height: 40px
     &_colored
       display: block
       color: #3afefd
+      +sm-block
+        display: inline-block
   &__line
     margin-top: 41px
     height: 4px
@@ -154,14 +200,23 @@ body
     width: 83%
     font-size: 25px
     margin-top: 30px
+    +sm-block
+      font-size: 15px
+      color: #bfc3ef
+      line-height: 29px
+      width: 100%
   &__button
     margin-top: 41px
     height: 59px
     width: 275px
     border-radius: 30px
+    +sm-block
+      margin: 41px auto 0 auto
   &__logo
     margin-top: 75px
     width: 66%
+    +sm-block
+      width: 100%
 
 .bank-logo
   display: flex
@@ -169,14 +224,21 @@ body
   flex-wrap: wrap
   justify-content: space-between
   height: 67px
+  +sm-block
+    height: 75px
   &__img
     height: 67px
     width: 77px
     background: url("../images/bank-logo-img.png") no-repeat center
+    +sm-block
+      margin-right: 20px
   &__text
     color: #bfc3ef
     font-size: 15px
     line-height: 29px
+    +sm-block
+      line-height: 20px
+      width: 70%
   &__title
     height: 29px
     width: 197px
@@ -187,27 +249,43 @@ body
   background-size: contain
   background-position: center top
   margin-top: -40px
+  +sm-block
+    margin-top: 0
 
 .about-section
   padding-top: 110px
   background-color: #f6f6fe
   padding-bottom: 90px
+  +sm-block
+    padding-top: 60px
   &__row
     margin-bottom: 30px
     &:last-of-type
+      margin-bottom: 0
+    +sm-block
       margin-bottom: 0
 
 .about-card
   +col
   +size(4)
+  +size-sm(6)
+  +size-xs(12)
   background: #ffffff
   padding: 37px 44px 30px 37px
+  +sm-block
+    margin-bottom: 20px
   &_no-text
+    +size-sm(12)
     background: transparent
     display: flex
     flex-direction: row
     flex-wrap: wrap
     justify-content: flex-end
+    +sm-block
+      order: -1
+      padding-left: 0
+      padding-right: 0
+      justify-content: flex-start
   &__icon
     display: block
     margin-bottom: 20px
@@ -217,14 +295,38 @@ body
     font-weight: bold
     margin-bottom: 30px
   &__grand-title
+    display: block
     font-size: 37px
     color: #30333f
     text-align: right
     margin-bottom: 65px
+    +sm-block
+      font-size: 30px
+      font-weight: bold
+      text-align: left
+      margin-bottom: 30px
+    &:after
+      display: none
+      content: ''
+      height: 4px
+      width: 66px
+      background-color: #e3e3eb
+      margin-top: 25px
+      +sm-block
+        display: block
   &__button
     width: 275px
     height: 59px
     border-radius: 30px
+    &_mobile
+      display: none
+      margin: 0 auto
+      +sm-block
+        display: block
+        margin-top: 18px
+    &_desktop
+      +sm-block
+        display: none
 
   &__caption
     font-size: 14px
@@ -252,6 +354,8 @@ body
 .tariff-card
   +col
   +size(3)
+  +size-md(6)
+  +size-xs(12)
   display: flex
   flex-direction: column
   flex-wrap: nowrap
@@ -260,6 +364,8 @@ body
   padding: 52px 22px 43px 23px
   text-align: center
   transition: all .25s linear
+  +md-block
+    margin-bottom: 40px
   &:hover
     margin-top: -20px
     padding-top: 72px
@@ -311,6 +417,7 @@ body
     line-height: 50px
     border-radius: 25px
     margin-top: 30px
+    font-weight: bold
     &:hover
       background: transparent
       box-shadow: 0 0 0 2px #4eb2ff
@@ -321,6 +428,10 @@ body
       width: 11px
       align-self: center
       background: url("../images/tariff-card-button-arrow.png")
+    +md-block
+      width: 80%
+      max-width: 250px
+      margin: 30px auto 0 auto
 
 .boost
   background: linear-gradient(-129deg, #2d3680 0%, #1b2069 100%)
@@ -329,6 +440,7 @@ body
 .boost-text
   +col
   +size(6)
+  +size-xs(12)
   display: flex
   flex-direction: row
   justify-content: center
@@ -336,18 +448,29 @@ body
   align-items: flex-start
   padding-bottom: 90px
   padding-top: 72px
+  +xs-block
+    justify-content: flex-start
+    padding: 62px 0 0
+
   &__header
     color: #f1f1f1
     font-size: 40px
     line-height: 59px
     font-weight: 600
     margin-bottom: 45px
+    +md-block
+      font-size: 30px
+      line-height: 40px
+      margin-bottom: 29px
+      flex-basis: 100%
   &__line
     margin-top: 10px
     background-color: #4b54a8
     width: 65px
     height: 4px
-  //flex-basis: 17%
+    +md-block
+      margin-top: 0
+      margin-bottom: 30px
   &__text
     color: #bfc3ef
     font-size: 18px
@@ -357,28 +480,40 @@ body
     &_bold
       font-weight: 600
       color: #ffffff
+    +md-block
+      margin-left: 0
+      flex-basis: 100%
   &__button
     margin-top: 42px
     height: 59px
     width: 275px
     border-radius: 30px
+    +md-block
+      margin: 42px auto 0 auto
 
 .boost-img
   +col
   +size(4)
+  +size-md(6)
+  +size-xs(12)
   +offset-left(2)
+  +offset-left-md(0)
   background: url("../images/boost-img.png") center center no-repeat
   background-size: 77%
-
+  +sm-block
+    min-height: 303px
 .farms
   padding: 170px 0 120px
   background-color: #f6f6fe
+  +sm-block
+    padding: 55px 0 55px
   &__title
     margin-bottom: 30px
   &__text-block
     +col
     +size(10)
-    margin: 0 auto 60px auto
+    +size-sm(12)
+    margin: 0 auto 60px
     font-size: 14px
     color: #9296ad
     text-align: center
@@ -387,10 +522,14 @@ body
     &_bottom
       margin: 90px auto 0 auto
       text-align: center
+      +sm-block
+        margin: 40px auto 0
 
 .farm-block
   +col
   +size(4)
+  +size-md(6)
+  +size-xs(12)
   display: flex
   flex-direction: row
   flex-wrap: wrap
@@ -408,9 +547,13 @@ body
     background: transparent
     flex-direction: column
     align-items: center
+    +sm-block
+      padding-left: 0
   &__img
     display: inline-block
     margin-right: 20px
+    +xxs-block
+      margin-right: 10px
     img
       display: block
   &__caption
@@ -429,40 +572,77 @@ body
     line-height: 25px
     margin-top: 9px
     font-weight: 600
+    +xxs-block
+      font-size: 22px
+      line-height: 20px
   &_price-curr
     font-size: 20px
 
 .equipment
   padding: 164px 0 196px
   background-color: #fff
+  +sm-block
+    padding: 58px 0 77px
   &__text-block
     margin-top: 35px
   &__col_left, &__col_right
     +col
     +size(4)
+    +size-sm(12)
     display: flex
     flex-direction: column
+    +sm-block
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: space-between
+    +xs-block
+      flex-direction: column
+      align-items: center
+  &__col_right
+    +sm-block
+      margin-top: 45px
   &__col_center
     +col
     +size(4)
+    +size-sm(12)
+    +sm-block
+      order: 2
+      min-height: 340px
+      margin-top: 25px
   &__image
     height: 100%
     background: url("../images/equipment-bg.png") center center no-repeat
     background-size: contain
   &__item
+    +size-sm(4)
+    +size-xs(12)
     margin-bottom: 150px
     &:last-of-type
       margin-bottom: 0
+    +sm-block
+      margin-bottom: 45px
   &__col_left .part
     flex-direction: row
+    +sm-block
+      flex-direction: column
+      align-items: center
   &__col_right .part
     flex-direction: row-reverse
+    +sm-block
+      flex-direction: column
+      align-items: center
   &__col_left .part__info
     margin-left: 27px
     text-align: left
+    +sm-block
+      margin-left: 0
+      text-align: center
   &__col_right .part__info
     margin-right: 27px
     text-align: right
+    +sm-block
+      margin-right: 0
+      text-align: center
 
 .part
   display: flex
@@ -471,27 +651,40 @@ body
     color: #4d505e
     font-size: 16px
     line-height: 30px
+    +sm-block
+      font-size: 14px
   &__price
     color: #4d505e
     font-size: 27px
     line-height: 45px
+    +sm-block
+      font-size: 22px
+      line-height: 27px
 
 .masscryp
   padding: 168px 0 104px
   background: #2d3680
   background: linear-gradient(-129deg, #2d3680 0%, #1b2069 100%)
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2d3680', endColorstr='#1b2069', GradientType=0)
+  +sm-block
+    padding: 82px 0 90px
   &__leftside, &__rightside
     +col
     +size(6)
-    +size-xxs(12)
+    +size-md(12)
   &__rightside
     display: flex
     flex-direction: column
     flex-wrap: wrap
     justify-content: space-between
-    +xxs-block
+    +md-block
+      flex-direction: row
+    +xs-block
       flex-wrap: nowrap
+      padding: 0 9%
+      flex-direction: column
+    +xxs-block
+      padding: 0
   &__leftside
     display: flex
     flex-direction: row
@@ -504,7 +697,7 @@ body
   &__logo2
     flex: 0 0 100%
     margin-bottom: 64px
-    +xxs-block
+    +md-block
       margin-bottom: 20px
   &__line
     height: 4px
@@ -516,7 +709,7 @@ body
     line-height: 25px
     flex: 0 0 76%
     margin-top: -10px
-    +xxs-block
+    +md-block
       margin-top: 0
       flex: 0 0 100%
   &__button
@@ -524,6 +717,13 @@ body
     width: 275px
     border-radius: 30px
     margin: 55px auto 0
+    &_desktop
+      +md-block
+        display: none
+    &_mobile
+      display: none
+      +md-block
+        display: block
   &__remarks
     +col
     +size(6)
@@ -531,6 +731,8 @@ body
     margin-top: 46px
     font-size: 14px
     color: #bfc3ef
+    +size-md(12)
+    +offset-left-sm(0)
     & p
       margin-bottom: 20px
       &:last-of-type
@@ -538,12 +740,17 @@ body
 .masscryp-card
   +col
   +size(6)
-  +size-xxs(12)
+  +size-md(6)
+  +size-xs(12)
   display: flex
   flex-direction: column
   justify-content: center
   padding: 0 8px
   flex: 0 0 47%
+  +md-block
+    flex-basis: auto
+    min-height: 250px
+    margin-top: 20px
   &_top
     //padding: 90px 0
     border-left: 4px solid #3d4587
@@ -595,16 +802,19 @@ body
 .order-section
   background-color: #f8f9fa
   padding: 191px 0 159px
-  +xxs-block
+  +sm-block
     padding: 75px 0 90px
   &__items
     position: relative
     display: flex
     flex-grow: 1
     flex-direction: row
-    +xxs-block
+    +sm-block
       +col
       flex-direction: column
+      margin-left: 20%
+    +xxs-block
+      margin-left: 10%
   &__progress-bar
     position: absolute
     width: calc(100% - 22px)
@@ -613,7 +823,7 @@ body
     height: 2px
     background-color: #eeeeee
     z-index: 0
-    +xxs-block
+    +sm-block
       height: 100%
       top: 33px
       left: 0
@@ -628,7 +838,7 @@ body
     background: linear-gradient(to left, #eeeeee 0%,#3e94f5 25%,#3e94f5 100%)
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#3e94f5',GradientType=0 )
     z-index: 1
-    +xxs-block
+    +sm-block
       height: 50%
       top: 33px
       left: 0
@@ -644,7 +854,7 @@ body
   display: flex
   flex-direction: row
   align-items: center
-  +xxs-block
+  +sm-block
     margin-bottom: 20px
     margin-left: 20px
   &__ico
@@ -669,7 +879,7 @@ body
     background: url("../images/order-item-mark.png") no-repeat center
     left: 24px
     bottom: -58px
-    +xxs-block
+    +sm-block
       left: -25px
       top: 41%
     &_completed
@@ -678,7 +888,7 @@ body
       background: url("../images/order-item-mark-completed.png") no-repeat center
       left: 22px
       bottom: -60px
-      +xxs-block
+      +sm-block
         left: -27px
 
 .footer
@@ -686,7 +896,7 @@ body
   background: #2d3680
   background: linear-gradient(149deg, #2d3680 0%,#1b2069 100%)
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d3680', endColorstr='#1b2069',GradientType=0 )
-  +xxs-block
+  +sm-block
     padding-top: 70px
 
   &__line
@@ -706,18 +916,23 @@ body
     line-height: 45px
     color: #ffffff
     text-transform: uppercase
-    +xxs-block
+    +sm-block
       line-height: 25px
   &__contacts
     margin-top: 87px
-    +xxs-block
+    +sm-block
       flex-direction: column
       align-items: flex-start
       margin-top: 55px
+      padding-left: 20%
+    +xs-block
+      padding-left: 10%
+    +xxs-block
+      padding-left: 0
   &__bottom
     justify-content: space-between
     align-items: center
-    +xxs-block
+    +sm-block
       justify-content: center
   &__copyright
     font-size: 13px
@@ -728,7 +943,7 @@ body
   flex-direction: column
   justify-content: flex-start
   align-items: center
-  +xxs-block
+  +sm-block
     flex-direction: row
     margin-bottom: 24px
   &__icon
@@ -752,11 +967,14 @@ body
     &_nb
       color: #777dbc
       font-weight: normal
-    +xxs-block
+    +sm-block
       margin-top: 0
       margin-left: 30px
+    +xxs-block
+      margin-left: 15px
+
 .social-icons
-  +xxs-block
+  +sm-block
     text-align: center
     flex: 0 0 100%
 .social-icons__icon
@@ -771,9 +989,14 @@ body
   &_tm
     background: url("../images/social-ico-tm.png")
 
+.modal-dialog
+  +sm-block
+    margin: 1.4rem
 .modal-content
   padding: 65px
   position: relative
+  +sm-block
+    padding: 40px 20px
 .modal-title
   font-family: "Open Sans"
   font-size: 28px
@@ -786,7 +1009,11 @@ body
   top: -34px
   height: 25px
   width: 25px
-  background: url("../images/modal-close.png")
+  background: url("../images/modal-close.png") no-repeat
+  +sm-block
+    background-size: 70%
+    right: -27px
+    top: -20px
 .modal-input
   display: block
   width: 100%
@@ -811,3 +1038,15 @@ body
 
 .modal input:focus, textarea:focus
   border: 2px solid #4eb2ff
+
+.mm-slideout
+  z-index: auto
+  
+.mm-menu
+  background: #f6f6fe
+.mm-navbar
+  height: auto
+.mm-navbars_bottom
+  border-top: none
+.mm-menu .mm-listitem_selected>a:not(.mm-btn_next)
+  background-color: transparent

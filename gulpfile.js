@@ -12,7 +12,7 @@ const uglify = require('gulp-uglify');
 const config = {
     src: './',
     css: {
-        watch: './app/sass/**/*.+(sass|scss)',
+        watch: './app/sass/**/**/*.+(sass|scss)',
         src: './app/sass/styles.sass',
         dest: './app/css'
     },
@@ -68,6 +68,7 @@ gulp.task('common-js', function () {
 
 gulp.task('scripts', ['common-js'], function () {
     return gulp.src([
+        "./app/addons/mmenu/dist/jquery.mmenu.all.js",
         "./app/app_js/common.min.js"
     ])
         .pipe(concat('scripts.min.js'))
