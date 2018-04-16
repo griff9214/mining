@@ -3,6 +3,8 @@
 @import "../addons/hamburgers/hamburgers"
 @import url('https://fonts.googleapis.com/css?family=Open+Sans')
 @import url('https://fonts.googleapis.com/css?family=Open+Sans')
+@import "../addons/mmenu/dist/jquery.mmenu.all.css"
+
 
 +reset
 html, body
@@ -542,6 +544,9 @@ body
     font-size: 16px
     line-height: 29px
     background-color: transparent
+    +sm-block
+      padding: 0
+      text-align: center
   &_with-button
     outline: 2px #ebebf7 solid
     background: transparent

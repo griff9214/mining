@@ -25,25 +25,7 @@ $('form button').click(function (event) {
     event.preventDefault();
 });
 
-//smooth scroll
-// all links with hashes
-function scrollTotarget(target) {
-    $('html, body').animate({
-        scrollTop: target.offset().top
-    }, 1000, function () {
-        // Callback after animation
-        // Must change focus!
-        var $target = $(target);
-        $target.focus();
-        if ($target.is(":focus")) { // Checking if the target was focused
-            return false;
-        } else {
-            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
-        }
-        ;
-    });
-}
+
 var $menu = $("#my-menu").mmenu({
         "extensions": [
         "pagedim-black",
@@ -86,6 +68,25 @@ API.bind( "close:finish", function() {
     }, 50);
 });
 
+//smooth scroll
+// all links with hashes
+function scrollTotarget(target) {
+    $('html, body').animate({
+        scrollTop: target.offset().top
+    }, 1000, function () {
+        // Callback after animation
+        // Must change focus!
+        var $target = $(target);
+        $target.focus();
+        if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+        } else {
+            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+        }
+        ;
+    });
+}
 $('a[href*="#"]')
 // Remove links that don't actually link to anything
     .not('[href="#"]')
