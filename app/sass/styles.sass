@@ -1,14 +1,33 @@
+//require bootstrap styles
+@import "../../node_modules/bootstrap/scss/functions"
+@import "../../node_modules/bootstrap/scss/variables"
+@import "../../node_modules/bootstrap/scss/mixins"
+@import "../../node_modules/bootstrap/scss/modal"
+
 @import "__smartgrid.sass"
 @import "__animations.sass"
-@import "../addons/hamburgers/hamburgers"
+
+//hamburger require and vars
+$hamburger-padding-y: 0px
+$hamburger-layer-color: #fff
+$hamburger-layer-width: 35px
+$hamburger-layer-height: 3px
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers"
+@import "../../node_modules/hamburgers/_sass/hamburgers/_base"
+
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans')
 @import url('https://fonts.googleapis.com/css?family=Open+Sans')
-@import "../addons/mmenu/dist/jquery.mmenu.all.css"
+@import "../../node_modules/jquery.mmenu/dist/jquery.mmenu.all.css"
+
 
 
 +reset
 html, body
   height: 100%
+input
+  &:hover, &:active, &:disabled, &:focus
+    outline: none
 
 body
   font-family: 'Open Sans', sans-serif

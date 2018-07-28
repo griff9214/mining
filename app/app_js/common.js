@@ -1,11 +1,10 @@
 $('form button').click(function (event) {
     var valid = true;
-
     if (valid) {
         formData = $(this).closest('form').serialize();
         $.ajax({
             type: 'POST',
-            url: '/mailer.php',
+            url: 'mailer.php', //возможно нужно подправить путь при размещении на сервере
             context: this,
             data: formData,
             beforeSend: function () {
@@ -92,7 +91,6 @@ $('a[href*="#"]')
     .not('[href="#"]')
     .not('[href="#0"]')
     .click(function (event) {
-        console.log(1);
         // On-page links
         if (
             location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')

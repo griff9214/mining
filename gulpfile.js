@@ -7,6 +7,7 @@ const gcmq = require('gulp-group-css-media-queries');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
+const rigger = require('gulp-rigger');
 
 
 const config = {
@@ -21,6 +22,7 @@ const config = {
     },
     js: {
         src: './app/app_js',
+        dest: './app/js',
         watch: './app/app_js/**/*.js'
     }
 };
@@ -53,43 +55,36 @@ gulp.task('watch', ['browserSync', 'sass'], function () {
 gulp.task('browserSync', function () {
     browserSync.init({
         server: {
-            baseDir: config.src+'app/'
+            baseDir: config.src + 'app/'
         }
     });
 });
-gulp.task('common-js', function () {
-    return gulp.src([
-        './app/app_js/common.js',
-    ])
-        .pipe(concat('common.min.js'))
-        //.pipe(uglify())
-        .pipe(gulp.dest('./app/app_js'));
-});
 
-gulp.task('scripts', ['common-js'], function () {
+
+gulp.task('scripts', function () {
     return gulp.src([
-        "./app/addons/mmenu/dist/jquery.mmenu.all.js",
-        "./app/app_js/common.min.js"
+        "./app/app_js/main.js"
     ])
-        .pipe(concat('scripts.min.js'))
-        //.pipe(uglify())
-        .pipe(gulp.dest('./app/js'))
+        .pipe(rigger())
+        .pipe(uglify())
+        .pipe(gulp.dest(config.js.dest))
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('build', ['sass', 'scripts'], function() {
+gulp.task('build', ['sass', 'scripts'], function () {
 
     var buildFiles = gulp.src([
         './app/*.html',
+        './app/*.php',
         './app/.htaccess',
     ]).pipe(gulp.dest('dist'));
 
     var buildCss = gulp.src([
-        './app/css/styles.css',
+        './app/css/**/*.css',
     ]).pipe(gulp.dest('dist/css'));
 
     var buildJs = gulp.src([
-        './app/js/scripts.min.js',
+        config.js.dest + '/*.js',
     ]).pipe(gulp.dest('dist/js'));
 
     var buildFonts = gulp.src([
